@@ -1,0 +1,13 @@
+@import "./assets/styles/theme";
+@import "./assets/styles/transition_page";
+@import "./assets/styles/animation";
+@import "./assets/styles/reset";
+@import "./assets/styles/containers";
+@import "./assets/styles/utils";
+@import "./assets/styles/hero_home";
+@import "./assets/styles/grid_container";
+@import "./assets/styles/card";
+
+app-project {
+  @extend .w-100;
+}

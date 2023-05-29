@@ -1,0 +1,21 @@
+//size
+
+.h_w-50 {
+  min-height: 50vh;
+}
+
+.ps_abs {
+  position: absolute;
+}
+.ps_rel {
+  position: relative;
+}
+
+.px-4r {
+  @media (min-width: 1200px) {
+    padding: 0 1rem;
+  }
+}
+.w-100 {
+  width: 100%;
+}

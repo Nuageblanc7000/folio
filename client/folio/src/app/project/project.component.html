@@ -1,0 +1,63 @@
+<section class="home_hero ps_rel" [@queryAnimation]="isActive">
+  <div class="profil_info d-flex flex-column justify-content-center container">
+    <div>
+      <div>
+        <h1 class="title_text typping">
+          <span class="first_letter">P</span>rojects
+        </h1>
+      </div>
+    </div>
+    <div class="swiper-container my-5 grid_container_card typping">
+      <div
+        class="wrapper"
+        *ngFor="let project of projects"
+        (click)="openPop(true, project)"
+      >
+        <div class="content-splitter">
+          <div class="left">
+            <div class="block">
+              <div class="header">{{ project.title }}</div>
+              <div class="content">
+                {{ project.description | slice : 0 : 185 }}...
+              </div>
+            </div>
+            <div class="container_icon_project d-flex">
+              <figure
+                class="d-flex flex-column align-items-center"
+                *ngFor="let techno of project.technologies"
+              >
+                <img
+                  [src]="[url_image + techno.icon]"
+                  alt="techno.title"
+                  class="my-2"
+                />
+                <figcaption>{{ techno.title }}</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <span *ngIf="!project.link">UpComming soon</span>
+          <img
+            [src]="['http://localhost:5000/projects/' + project.images[0].path]"
+            [alt]="project.title"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <a class="btn_arrow my-4 typping" [routerLink]="['/contact']">
+        Contact me <span>&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+<div class="ps_rel">
+  <app-info-pop
+    *ngIf="project"
+    [view]="view"
+    (onClick)="close($event)"
+    [project]="project"
+  ></app-info-pop>
+</div>

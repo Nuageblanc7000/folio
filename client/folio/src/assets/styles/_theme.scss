@@ -1,0 +1,98 @@
+$body-color: #f6f6f6;
+$black-color: #1b1813;
+$red-color: #95202b;
+
+.title_bar {
+  display: block;
+  margin: 1rem 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.bar {
+  background-color: $red-color;
+  width: 15px;
+  height: 3px;
+}
+
+.title_text {
+  font-weight: bold;
+  font-size: 6rem !important;
+  margin: 1rem 0;
+  display: block;
+  @media (max-width: 992px) {
+    font-size: 3rem !important;
+    text-align: center;
+  }
+}
+
+.title_red {
+  color: $red-color;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+//button
+.btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px 5px 15px 5px;
+  color: $body-color;
+  margin: 10px 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background-color: #95202b;
+    border-color: $body-color;
+  }
+}
+.btn_trans {
+  @extend .btn;
+  background-color: transparent;
+  border: 3px solid $red-color;
+  transition: all 0.5s ease cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.btn-info {
+  border: 1px solid var($red-color) !important;
+  background-color: #1b1813;
+}
+
+.btn_arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  cursor: pointer;
+  // pointer-events: none;
+  position: relative;
+  color: white;
+  &:hover {
+    color: $red-color;
+    span {
+      animation: arrow 1s ease infinite;
+    }
+  }
+  span {
+    position: relative;
+    font-size: 2rem;
+    padding: 0 0.2rem;
+  }
+  @media (max-width: 992px) {
+    font-size: 1.2rem !important;
+    padding: 0 0.2rem;
+  }
+}
+
+.first_letter {
+  color: $red-color;
+}
+@keyframes arrow {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 20%;
+    opacity: 0;
+  }
+}

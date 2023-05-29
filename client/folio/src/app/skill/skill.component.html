@@ -1,0 +1,52 @@
+<section class="home_hero" [@queryAnimation]="">
+  <div class="profil_picture typping">
+    <img class="enter" src="../../assets/images/remyw.png" alt="it's me" />
+  </div>
+  <div class="profil_info d-flex flex-column justify-content-center">
+    <div>
+      <div>
+        <h1 class="title_text typping">
+          <span class="first_letter">S</span>kills
+        </h1>
+      </div>
+    </div>
+    <div class="tel_profil_picture my-2 typping">
+      <img src="../../assets/images/remyw.png" alt="" />
+    </div>
+    <span class="title_red typping"> My studies </span>
+    <div class="description typing-container">
+      <p class="typping">
+        In 2020, I made the decision to pursue further studies in the field of
+        development due to my enduring passion for technology. I enrolled in a
+        higher education program at EPSE d'Enghien, where I embarked on a
+        two-year journey. Throughout this period, I gained extensive knowledge
+        in PHP and Symfony, alongside an introductory understanding of frontend
+        development using React. However, being aware of the evolving industry
+        trends, I complemented my education by acquiring proficiency in Angular,
+        React, and Node.js. These new skills captivated me and further fueled my
+        enthusiasm for modern technologies.
+      </p>
+    </div>
+
+    <div class="container_technologies my-5">
+      <span class="title_bar d-flex align-items-center typping">
+        <div class="bar me-2"></div>
+        Technologies
+      </span>
+      <div class="container_icon d-flex typping">
+        <figure
+          class="d-flex flex-column align-items-center"
+          *ngFor="let t of technologies"
+        >
+          <img [src]="[url_image + t.icon]" alt="t.title" class="my-2" />
+          <figcaption>{{ t.title }}</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div>
+      <a class="btn_arrow my-4 typping" [routerLink]="['/projects']">
+        Are you ready for looking my projects ? <span>&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<section class="home_hero" [@queryAnimation]="exp">
+  <div class="profil_picture typping">
+    <img class="enter" src="../assets/images/r.png" alt="it's me" />
+  </div>
+  <div class="profil_info d-flex flex-column justify-content-center">
+    <span class="title_bar d-flex align-items-center typping">
+      <div class="bar me-2"></div>
+      I'am
+    </span>
+    <div>
+      <div>
+        <h1 class="title_text typping">
+          <span class="first_letter">W</span>etterene
+          <span class="first_letter">R</span>émy
+        </h1>
+      </div>
+    </div>
+    <div class="tel_profil_picture my-2 typping">
+      <img src="../assets/images/r.png" alt="" />
+    </div>
+    <span class="title_red typping"> Web Developer </span>
+    <div class="description typing-container">
+      <p class="typping">
+        As a junior full stack web developer, I am passionate about creating
+        websites and applications. I use various technologies to develop smooth
+        and intuitive user experiences. My goal is to bring innovative solutions
+        and contribute to exciting projects. Want to know more? Click on
+        "Discover me" and explore my journey and skills.
+      </p>
+    </div>
+    <div>
+      <a class="btn_arrow my-4 typping" [routerLink]="['/skills']">
+        Discover me <span>&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>

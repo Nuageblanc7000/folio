@@ -1,0 +1,192 @@
+app-project {
+  width: 100% !important;
+  height: 100% !important;
+}
+.project {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+}
+.swiper-container {
+  width: 100%;
+  .swiper {
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    cursor: pointer;
+    min-height: 30vh;
+    max-height: 40vh;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    // background-image: url("../../assets/images/manda.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 1px 40px 20px rgba(0, 0, 0, 0.196);
+    transition: 0.8s all cubic-bezier(0.165, 0.84, 0.44, 1);
+    filter: grayscale(1);
+    transform: scale(1);
+    &:hover {
+      filter: grayscale(0);
+      transform: scale(1.05);
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+.right_swiper {
+  overflow: hidden;
+  clip-path: polygon(35% 0%, 100% 0, 100% 100%, 8% 100%);
+  object-fit: cover;
+}
+.wrapper {
+  max-height: 400px;
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  overflow-y: hidden;
+  border-radius: 20px;
+
+  cursor: pointer;
+  background: hsl(0, 0%, 95%);
+  box-shadow: 1px 1px 25px 3px rgba(0, 0, 0, 0.3);
+  transition: 0.8s all cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    // position: absolute;
+    max-height: inherit;
+    overflow-y: hidden;
+  }
+}
+.home_hero {
+  padding: 0 !important;
+}
+
+/*************/
+
+/*************/
+.header {
+  width: max-content;
+  font-size: 2.875rem;
+  text-transform: capitalize;
+
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px #222222;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5%;
+}
+/*************/
+.content-splitter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 1em;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+.content {
+  font-size: 1.5em;
+  color: #404040;
+}
+
+.c2a {
+  font-size: 1.6em;
+  color: white;
+  padding: 0.4em 0.8em;
+  width: max-content;
+  background: #222222;
+  border-radius: 4px;
+  transition: all 250 ease-in-out;
+  cursor: pointer;
+}
+.c2a:hover {
+  background: #444444;
+}
+
+.right {
+  overflow: hidden;
+  max-height: inherit;
+  display: flex;
+  clip-path: polygon(35% 0%, 100% 0, 100% 100%, 8% 100%);
+  span {
+    z-index: 20;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #95202b;
+    transform: translate(-50%, -50%) rotate(316deg);
+    width: 100%;
+    max-width: inherit;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  filter: grayscale(1);
+  @media (max-width: 992px) {
+    display: none;
+    z-index: -1;
+  }
+}
+
+.container_icon_project {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 1rem 0;
+  gap: 30px;
+  figure {
+    cursor: pointer;
+    width: 40px;
+    // width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+    figcaption {
+      font-weight: bold;
+      color: black;
+      text-transform: capitalize;
+    }
+    @media (max-width: 992px) {
+      height: 40px;
+      width: 40px;
+    }
+  }
+}
+
+.wrapper:hover .right {
+  filter: grayscale(0);
+}

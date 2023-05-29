@@ -1,0 +1,30 @@
+<section class="home_hero" [@queryAnimation]="exp">
+  <div class="profil_picture typping">
+    <img class="enter" src="../assets/images/r.png" alt="it's me" />
+  </div>
+  <div class="profil_info d-flex flex-column justify-content-center">
+    <div>
+      <div>
+        <h1 class="title_text typping">
+          <span class="first_letter">C</span>ontact
+        </h1>
+      </div>
+    </div>
+    <div class="tel_profil_picture my-2 typping">
+      <img src="../assets/images/r.png" alt="me " />
+    </div>
+    <span class="title_red typping"> Open to work </span>
+    <div class="description typing-container">
+      <p class="typping">
+        I hope you liked my portfolio v1, built with Angular and Express. Please
+        feel free to leave your feedback. If you're looking for a motivated
+        individual, don't hesitate to contact me!
+      </p>
+    </div>
+    <div>
+      <a class="btn_arrow my-4 typping" [routerLink]="['/skills']">
+        Discover me <span>&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
