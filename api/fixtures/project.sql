@@ -13,7 +13,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 
 insert into users (`firstname`, `lastname`, `email`, `password`) 
-	values ("remy","wetterene","wetterene.remy@gmail.com","test");
+	values ("remy","wetterene","wetterene.remy@gmail.com","$2b$08$r3OnXtsLLJ8lNz9B/3Ux8eibYoao6FXdV07rSyYtnze3sNSKv1wja");
 
 
 

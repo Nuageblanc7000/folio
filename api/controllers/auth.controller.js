@@ -3,6 +3,7 @@ const authService = require("../services/auth.service");
 const { SuccessResponse } = require("../utils/Responses/Succes.response");
 const ErrorCode = require("../utils/Responses/code.error");
 const jwt = require("../utils/jwt.utils");
+const bcrypt = require("bcrypt");
 
 const authController = {
   /**
@@ -28,6 +29,9 @@ const authController = {
     const { email, password } = req.body;
 
     const user = await authService.login(email, password);
+
+    const t = await bcrypt.genSalt(8);
+    console.log(await bcrypt.hash("kerleoguy29910", t));
     if (!user) {
       return next({ name: ErrorCode.USER_LOGIN_FAILED });
     }
