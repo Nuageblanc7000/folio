@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 import { IProject } from '../shared/interface/iproject.interface';
 import { ProjectService } from '../shared/services/project.service';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { GlobalService } from '../shared/services/global.service';
 
 @Component({
   selector: 'app-project',
@@ -31,7 +32,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
   ],
 })
 export class ProjectComponent {
-  url_image: string = 'http://localhost:5000/projects/';
+  url_image: string = '';
   isActive: string = '';
   projects: IProject[] = [];
   project?: IProject;
@@ -45,8 +46,12 @@ export class ProjectComponent {
     this.view = view;
     this.project = project;
   }
-  constructor(private projectService: ProjectService) {}
+  constructor(
+    private projectService: ProjectService,
+    private globalService: GlobalService
+  ) {}
   ngOnInit() {
+    this.url_image = this.globalService.API_IMG_URL;
     this.projectService.getAllProjects().subscribe({
       next: (response: any) => {
         const { data } = response;

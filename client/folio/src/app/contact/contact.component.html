@@ -1,30 +1,73 @@
-<section class="home_hero" [@queryAnimation]="exp">
-  <div class="profil_picture typping">
-    <img class="enter" src="../assets/images/r.png" alt="it's me" />
-  </div>
-  <div class="profil_info d-flex flex-column justify-content-center">
-    <div>
+<section class="home_hero justify-content-center" [@queryAnimation]="exp">
+  <div class="container justify-content-center d-flex flex-wrap">
+    <div class="profil_info d-flex flex-column justify-content-center">
       <div>
-        <h1 class="title_text typping">
-          <span class="first_letter">C</span>ontact
-        </h1>
+        <div>
+          <h1 class="title_text typping">
+            <span class="first_letter">C</span>ontact
+          </h1>
+        </div>
+      </div>
+
+      <span class="title_red typping"> Open to work </span>
+      <div class="description typing-container mb-2">
+        <p class="typping">
+          I hope you liked my portfolio v1, built with Angular and Express.
+          Please feel free to leave your feedback. If you're looking for a
+          motivated individual, don't hesitate to contact me!
+        </p>
       </div>
     </div>
-    <div class="tel_profil_picture my-2 typping">
-      <img src="../assets/images/r.png" alt="me " />
-    </div>
-    <span class="title_red typping"> Open to work </span>
-    <div class="description typing-container">
-      <p class="typping">
-        I hope you liked my portfolio v1, built with Angular and Express. Please
-        feel free to leave your feedback. If you're looking for a motivated
-        individual, don't hesitate to contact me!
-      </p>
-    </div>
-    <div>
-      <a class="btn_arrow my-4 typping" [routerLink]="['/skills']">
-        Discover me <span>&rarr;</span>
-      </a>
+    <div class="form_container typping">
+      <div class="wrapper_form d-flex flex-column">
+        <form class="my-2">
+          <div class="container_input">
+            <label for="name" class="d-flex align-items-center my-2 label_form">
+              <div class="bar me-2"></div>
+              Agency name :
+            </label>
+            <input id="name" type="text" />
+          </div>
+          <div class="container_input">
+            <label
+              for="email"
+              class="d-flex align-items-center my-2 label_form"
+            >
+              <div class="bar me-2"></div>
+              Agency email :
+            </label>
+            <input id="email" type="email" />
+          </div>
+          <div class="container_textarea">
+            <label
+              for="message"
+              class="d-flex align-items-center my-2 label_form"
+            >
+              <div class="bar me-2"></div>
+              Message :
+            </label>
+            <textarea id="message"></textarea>
+          </div>
+          <div class="w-100 d-flex justify-content-center mt-2">
+            <button class="btn btn-info">Send message</button>
+          </div>
+        </form>
+        <figure class="profil_picture_form d-flex flex-column">
+          <div class="container_img_contact">
+            <img
+              class="enter"
+              src="../../assets/images/githubpng.png"
+              alt="it's me"
+            />
+          </div>
+
+          <figcaption class="d-flex justify-content-center align-items-center">
+            <div class="bar me-2"></div>
+            <a href="" target="_blank"> My github </a>
+            <div class="bar ms-2"></div>
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>

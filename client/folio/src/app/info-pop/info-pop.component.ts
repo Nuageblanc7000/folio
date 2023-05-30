@@ -8,6 +8,7 @@ import {
   animate,
 } from '@angular/animations';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { GlobalService } from '../shared/services/global.service';
 
 @Component({
   selector: 'app-info-pop',
@@ -37,8 +38,12 @@ export class InfoPopComponent {
   @Input() view?: boolean;
   @Output() onClick: EventEmitter<boolean> = new EventEmitter();
   @Output() onNavigateEmit: EventEmitter<number> = new EventEmitter();
+  url_image: string = '';
   state: string = 'open';
-  constructor() {}
+  constructor(private globalService: GlobalService) {}
+  ngOnInit() {
+    this.url_image = this.globalService.API_IMG_URL;
+  }
   close() {
     this.view = false;
     this.onClick.emit(this.view);

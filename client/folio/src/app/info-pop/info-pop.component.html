@@ -7,11 +7,7 @@
     <figure
       class="hero-inside"
       [ngStyle]="{
-        backgroundImage:
-          ' url(' +
-          'http://localhost:5000/projects/' +
-          project.images[0].path +
-          ') '
+        backgroundImage: ' url(' + url_image + project.images[0].path + ') '
       }"
     >
       <div *ngIf="" class="overlay-2"></div>
@@ -32,6 +28,15 @@
           class="btn btn-info"
         >
           <span>{{ project.title }} discover </span>
+        </a>
+
+        <a
+          *ngIf="project.github"
+          [href]="project.github"
+          target="_blank"
+          class="btn btn-info mx-2"
+        >
+          <span>Githhub </span>
         </a>
       </div>
     </div>

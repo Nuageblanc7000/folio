@@ -16,6 +16,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SkillComponent } from './skill/skill.component';
 import { ContactComponent } from './contact/contact.component';
 import { InfoPopComponent } from './info-pop/info-pop.component';
+import { GlobalService } from './shared/services/global.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { InfoPopComponent } from './info-pop/info-pop.component';
 
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [GlobalService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

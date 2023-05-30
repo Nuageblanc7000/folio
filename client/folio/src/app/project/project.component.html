@@ -18,7 +18,7 @@
             <div class="block">
               <div class="header">{{ project.title }}</div>
               <div class="content">
-                {{ project.description | slice : 0 : 185 }}...
+                {{ project.description | slice : 0 : 100 }}...
               </div>
             </div>
             <div class="container_icon_project d-flex">
@@ -39,7 +39,7 @@
         <div class="right">
           <span *ngIf="!project.link">UpComming soon</span>
           <img
-            [src]="['http://localhost:5000/projects/' + project.images[0].path]"
+            [src]="[url_image + project.images[0].path]"
             [alt]="project.title"
           />
         </div>

@@ -27,13 +27,16 @@
   border-radius: 10px;
   background-color: #f6f6f6;
   margin: 20px;
-  min-height: 80%;
+
   height: auto;
   overflow-y: scroll;
 
   max-width: 900px;
   width: 100%;
   z-index: 200;
+  @media (max-width: 576px) {
+    margin: 9rem 10px 10px 10px;
+  }
   .hero-inside {
     display: flex;
     align-items: center;
@@ -49,7 +52,7 @@
     font-size: 0.85vw;
     user-select: none;
     letter-spacing: 0 !important;
-    min-height: 40vh;
+    min-height: 30vh;
     position: relative;
     background-position: 60%;
     background-size: cover;

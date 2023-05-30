@@ -8,6 +8,7 @@
 @import "./assets/styles/grid_container";
 @import "./assets/styles/card";
 
-app-project {
+app-project,
+app-contact {
   @extend .w-100;
 }
