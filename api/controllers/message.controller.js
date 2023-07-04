@@ -1,4 +1,3 @@
-const sendmail = require("../config/mailer.config");
 const { SuccessResponse } = require("../utils/Responses/Succes.response");
 const { messageService } = require("../services/message.service");
 const messageController = {
