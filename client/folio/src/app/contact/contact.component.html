@@ -20,13 +20,19 @@
     </div>
     <div class="form_container typping">
       <div class="wrapper_form d-flex flex-column">
-        <form class="my-2">
+        <form class="my-2" (submit)="onSubmit()" [formGroup]="formContact">
           <div class="container_input">
             <label for="name" class="d-flex align-items-center my-2 label_form">
               <div class="bar me-2"></div>
               Agency name :
             </label>
-            <input id="name" type="text" />
+            <input id="name" formControlName="name" type="text" />
+            <p *ngIf="hasError('name', 'required')" class="eror_theme">
+              {{ validationMessageErrors["required"] }}
+            </p>
+            <p *ngIf="hasError('name', 'maxlength')" class="eror_theme">
+              {{ validationMessageErrors["maxlength"] }}
+            </p>
           </div>
           <div class="container_input">
             <label
@@ -36,7 +42,13 @@
               <div class="bar me-2"></div>
               Agency email :
             </label>
-            <input id="email" type="email" />
+            <input id="email" formControlName="email" type="email" />
+            <p *ngIf="hasError('email', 'email')" class="eror_theme">
+              {{ validationMessageErrors["email"] }}
+            </p>
+            <p *ngIf="hasError('email', 'required')" class="eror_theme">
+              {{ validationMessageErrors["required"] }}
+            </p>
           </div>
           <div class="container_textarea">
             <label
@@ -46,10 +58,16 @@
               <div class="bar me-2"></div>
               Message :
             </label>
-            <textarea id="message"></textarea>
+            <textarea formControlName="message" id="message"></textarea>
+            <p *ngIf="hasError('message', 'required')" class="eror_theme">
+              {{ validationMessageErrors["required"] }}
+            </p>
+            <p *ngIf="hasError('message', 'maxlength')" class="eror_theme">
+              {{ validationMessageErrors["maxlength"] }}
+            </p>
           </div>
           <div class="w-100 d-flex justify-content-center mt-2">
-            <button class="btn btn-info">Send message</button>
+            <button type="submit" class="btn btn-info">Send message</button>
           </div>
         </form>
         <figure class="profil_picture_form d-flex flex-column">
@@ -70,4 +88,5 @@
       </div>
     </div>
   </div>
+  <canvas #confettiCanvas id="canvas_confetti"></canvas>
 </section>

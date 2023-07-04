@@ -38,7 +38,6 @@ export class ProjectComponent {
   project?: IProject;
   view: boolean = false;
   close(view: boolean): void {
-    console.log(view);
     this.view = view;
   }
 

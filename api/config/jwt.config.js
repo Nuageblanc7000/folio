@@ -29,10 +29,8 @@ const addJwtHelper = (req, res, next) => {
  * @throws {Error} - Lève une erreur si le token est expiré
  */
 const checkExperiationToken = async (token, res) => {
-  console.log("tokenator", token);
   const tokenExp = token.exp;
   const nowInSec = Math.floor(Date.now() / 1000);
-  console.log(nowInSec, "----------------->nowInsec");
   if (nowInSec <= tokenExp) {
     console.log("token encore bon");
     return token;

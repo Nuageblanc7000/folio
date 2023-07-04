@@ -3,10 +3,11 @@ const authRouter = require("./auth.router");
 const projectRouter = require("./project.router");
 const technologyRouter = require("./technology.router");
 const userRouter = require("./user.router");
-
+const messageRouter = require("./message.router");
 const router = require("express").Router();
 router.use("/auth", authRouter);
 router.use("/projects", projectRouter);
 router.use("/technologies", technologyRouter);
 router.use("/users", userRouter);
+router.use("/message", messageRouter);
 module.exports = router;

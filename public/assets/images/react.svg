@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.6 116.37">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-miterlimit: 4;
+        stroke-width: 1px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #eaeaea;
+      }
+
+      .cls-3 {
+        fill: #61dafb;
+        stroke: #d8d8d8;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-4 {
+        fill: #f9f9f9;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <g>
+      <path class="cls-3" d="m92.23,114.37l-54.77-.44c-3.05-.02-5.85-1.67-7.35-4.33L3.11,61.95c-1.5-2.65-1.48-5.9.07-8.53L30.94,6.21c1.55-2.63,4.38-4.23,7.42-4.21l54.77.44c3.05.02,5.85,1.67,7.35,4.33l27,47.65c1.5,2.65,1.48,5.9-.07,8.53l-27.77,47.21c-1.55,2.63-4.38,4.23-7.42,4.21Z"/>
+      <circle class="cls-4" cx="65.26" cy="57.6" r="7.39"/>
+      <g>
+        <ellipse class="cls-2" cx="64.38" cy="57.13" rx="15.13" ry="39.63" transform="translate(6.03 120.41) rotate(-88.91)"/>
+        <ellipse class="cls-1" cx="64.38" cy="57.13" rx="15.13" ry="39.63" transform="translate(-19.6 38.24) rotate(-28.91)"/>
+        <ellipse class="cls-1" cx="64.38" cy="57.13" rx="39.63" ry="15.13" transform="translate(-17.79 82.75) rotate(-58.91)"/>
+      </g>
+    </g>
+  </g>
+</svg>

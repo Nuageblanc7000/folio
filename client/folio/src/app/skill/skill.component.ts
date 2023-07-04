@@ -41,10 +41,7 @@ export class SkillComponent {
     this.technoService.getAll().subscribe({
       next: (response: any) => {
         const { data } = response;
-        console.log(data);
         this.technologies = data.technologies;
-
-        console.log(this.technologies);
       },
     });
   }

@@ -7,8 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CardComponent } from 'src/app/card/card.component';
-
 import { ProjectComponent } from './project/project.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
@@ -17,16 +15,15 @@ import { SkillComponent } from './skill/skill.component';
 import { ContactComponent } from './contact/contact.component';
 import { InfoPopComponent } from './info-pop/info-pop.component';
 import { GlobalService } from './shared/services/global.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     FooterComponent,
-    CardComponent,
     SkillComponent,
     HomeComponent,
-    CardComponent,
     ProjectComponent,
     ContactComponent,
     InfoPopComponent,
@@ -35,7 +32,7 @@ import { GlobalService } from './shared/services/global.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
+    ReactiveFormsModule,
     BrowserAnimationsModule,
   ],
   providers: [GlobalService],
