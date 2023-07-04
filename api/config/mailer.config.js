@@ -8,9 +8,9 @@ async function sendMail(from, name, message) {
       apiKey: API_MAIL,
     }),
     {
-      secure: false,
-      tls: { rejectUnauthorized: false },
-      debug: true,
+      tls: {
+        rejectUnauthorized: false,
+      },
     }
   );
 
