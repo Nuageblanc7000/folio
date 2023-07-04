@@ -18,16 +18,7 @@ const messageController = {
         .json(new SuccessResponse("message bien envoyé", 200));
     } catch (e) {
       console.log(e);
-      return res
-        .status(400)
-        .json(
-          new ErrorResponse(
-            "une erreur est survenue veuillez relancer un email",
-            (path = "global"),
-            (err = e),
-            (code = 400)
-          )
-        );
+      return res.status(400).json(e);
     }
   },
 };

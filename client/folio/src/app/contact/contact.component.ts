@@ -70,11 +70,13 @@ export class ContactComponent {
 
   onSubmit() {
     if (this.formContact.valid) {
+      console.log(this.formContact.value);
       this.unsubscribe.add(
         this.contactService.sendMessage(this.formContact.value).subscribe({
           next: () => {
             this.contactService.isSending$.next(false);
           },
+          error: (err) => console.log(err),
         })
       );
     } else {
