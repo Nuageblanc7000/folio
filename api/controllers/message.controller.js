@@ -9,11 +9,8 @@ const messageController = {
    */
   sendMessage: async (req, res, next) => {
     const body = req.body;
+    await sendmail("wetterene.remy@gmail.com", "remy", "super remy");
     return res.status(200).json(new SuccessResponse(body, 200));
-    // } catch (e) {
-    //   console.log(e);
-    //   return res.status(400).json(e);
-    // }
   },
 };
 module.exports = messageController;
