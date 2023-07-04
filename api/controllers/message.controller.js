@@ -1,5 +1,6 @@
 const sendmail = require("../config/mailer.config");
 const { SuccessResponse } = require("../utils/Responses/Succes.response");
+const { messageService } = require("../services/message.service");
 const messageController = {
   /**
    *
@@ -8,9 +9,11 @@ const messageController = {
    * @param {import("express").NextFunction} next
    */
   sendMessage: async (req, res, next) => {
-    const body = req.body;
-    await sendmail("wetterene.remy@gmail.com", "remy", "super remy");
-    return res.status(200).json(new SuccessResponse(body, 200));
+    const { message, email, name } = req.body;
+    messageService.sendMessage({ message, email, name });
+    return res
+      .status(200)
+      .json(new SuccessResponse("message bien envoyé", 200));
   },
 };
 module.exports = messageController;

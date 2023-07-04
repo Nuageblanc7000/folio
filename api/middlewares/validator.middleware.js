@@ -16,7 +16,6 @@ const validatorModelMiddleware = (schema) => {
       if (req.body.technologies && req.body.technologies?.length > 0) {
         req.body.technologies = req.body.technologies.map((t) => parseInt(t));
       }
-      console.log(req.body);
       const project = await schema.validate(body, { abortEarly: false });
     } catch (err) {
       if (req.files || req.file) {

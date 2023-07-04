@@ -12,6 +12,7 @@ DBMYSQL.Project = require("./project.model")(sequelize);
 DBMYSQL.User = require("./user.model")(sequelize);
 DBMYSQL.Technology = require("./technology.model")(sequelize);
 DBMYSQL.Image = require("./image.model")(sequelize);
+DBMYSQL.Mesage = require("./message.model")(sequelize);
 //reflection
 //MANY TO MANY PROJECT TECHNO
 DBMYSQL.Project.belongsToMany(DBMYSQL.Technology, {

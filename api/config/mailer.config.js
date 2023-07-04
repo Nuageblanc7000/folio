@@ -2,7 +2,7 @@ const { API_MAIL, MAIL_ME } = process.env;
 const nodemailer = require("nodemailer");
 const Transport = require("nodemailer-brevo-transport");
 
-async function sendMail(from, name, message) {
+function sendMail(from, name, message) {
   const transporter = nodemailer.createTransport(
     new Transport({
       apiKey: API_MAIL,
@@ -14,7 +14,7 @@ async function sendMail(from, name, message) {
     }
   );
 
-  await transporter.sendMail({
+  transporter.sendMail({
     from: from,
     to: MAIL_ME,
     subject: "nouveau de la société :" + name,
