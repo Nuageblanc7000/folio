@@ -1,10 +1,10 @@
 const { API_MAIL, MAIL_ME } = process.env;
 const nodemailer = require("nodemailer");
-const sendingTransport = require("nodemailer-sendinblue-transport");
+const Transport = require("nodemailer-brevo-transport");
 
 async function sendMail(from, name, message) {
   const transporter = nodemailer.createTransport(
-    new sendingTransport({
+    new Transport({
       apiKey: API_MAIL,
     }),
     {
