@@ -7,6 +7,9 @@ $red-color: #95202b;
   margin: 1rem 0;
   font-size: 1.6rem;
   font-weight: bold;
+  @media (max-width: 576px) {
+    font-size: 1.2rem;
+  }
 }
 
 .bar {
@@ -24,12 +27,19 @@ $red-color: #95202b;
     font-size: 3rem !important;
     text-align: center;
   }
+  @media (max-width: 576px) {
+    font-size: 2rem !important;
+  }
 }
 
 .title_red {
   color: $red-color;
   font-size: 2rem;
   margin: 1rem 0;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem !important;
+  }
 }
 
 //button
@@ -101,4 +111,9 @@ $red-color: #95202b;
 .eror_theme {
   color: $red-color;
   font-size: 0.8rem;
+}
+.typping {
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 }

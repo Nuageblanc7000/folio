@@ -112,6 +112,9 @@ app-project {
 .content {
   font-size: 1.5em;
   color: #404040;
+  @media (max-width: 576px) {
+    font-size: 1.3rem;
+  }
 }
 
 .c2a {

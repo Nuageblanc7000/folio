@@ -16,7 +16,7 @@ const errorHandler = require("./utils/Responses/error.handler");
 const swagerDocs = require("./docs/swager");
 const DBMYSQL = require("./models");
 exports.app = app;
-app.use(cookieParser(SECRET_COOKIE_KEY, { secure: false, sameSite: "none" }));
+app.use(cookieParser(SECRET_COOKIE_KEY, { secure: true, sameSite: "none" }));
 app.use(cors());
 app.use((req, res, next) => {
   // res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");

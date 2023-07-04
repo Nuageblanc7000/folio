@@ -9,7 +9,7 @@ import {
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as confetti from 'canvas-confetti';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { ErrorMessage } from '../shared/interface/ierrorMessage.interface';
 import { ContactService } from '../shared/services/contact.service';
 @Component({
@@ -19,14 +19,18 @@ import { ContactService } from '../shared/services/contact.service';
   animations: [
     trigger('queryAnimation', [
       transition(':enter', [
-        query('.typping', [
-          style({
-            opacity: 0,
-            transform: 'translateX(80px)',
-          }),
+        query(
+          '.typping',
+          [
+            style({
+              opacity: 0,
+              transform: 'translateX(80px)',
+            }),
 
-          stagger(100, [animate(500)]),
-        ]),
+            stagger(100, [animate(500)]),
+          ],
+          { optional: true }
+        ),
       ]),
     ]),
   ],
@@ -43,6 +47,8 @@ export class ContactComponent {
   msgEmail: string = '';
   msgName: string = '';
   msgMessage: string = '';
+  isSendMessage: Observable<boolean> = this.contactService.isSending$;
+  unsubscribe: Subscription = new Subscription();
   validationMessageErrors: ErrorMessage = {
     required: 'Ce champ est requis',
     email: 'Entrer un email valide',
@@ -64,7 +70,13 @@ export class ContactComponent {
 
   onSubmit() {
     if (this.formContact.valid) {
-      this.contactService.sendMessage(this.formContact.value);
+      this.unsubscribe.add(
+        this.contactService.sendMessage(this.formContact.value).subscribe({
+          next: () => {
+            this.contactService.isSending$.next(false);
+          },
+        })
+      );
     } else {
       this.formContact.markAllAsTouched();
     }
@@ -91,6 +103,7 @@ export class ContactComponent {
     return false;
   }
   ngOnDestroy() {
+    this.unsubscribe.unsubscribe();
     clearInterval(this.timeout);
   }
   triggerConfetti() {

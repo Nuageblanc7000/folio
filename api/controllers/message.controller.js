@@ -9,9 +9,10 @@ const messageController = {
    * @param {import("express").NextFunction} next
    */
   sendMessage: async (req, res, next) => {
-    const { message, mail, name } = req.body;
+    const { message, email, name } = req.body;
+    console.log(message, email, name);
     try {
-      const send = await sendmail(mail, message, name);
+      const send = await sendmail(email, message, name);
       return res
         .status(200)
         .json(new SuccessResponse("message bien envoyé", 200));

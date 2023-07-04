@@ -1,7 +1,7 @@
 <section class="home_hero justify-content-center" [@queryAnimation]="exp">
   <div class="container justify-content-center d-flex flex-wrap">
     <div class="profil_info d-flex flex-column justify-content-center">
-      <div>
+      <div *ngIf="isSendMessage | async">
         <div>
           <h1 class="title_text typping">
             <span class="first_letter">C</span>ontact
@@ -9,8 +9,13 @@
         </div>
       </div>
 
-      <span class="title_red typping"> Open to work </span>
-      <div class="description typing-container mb-2">
+      <span *ngIf="isSendMessage | async" class="title_red typping">
+        Open to work
+      </span>
+      <div
+        *ngIf="isSendMessage | async"
+        class="description typing-container mb-2"
+      >
         <p class="typping">
           I hope you liked my portfolio v1, built with Angular and Express.
           Please feel free to leave your feedback. If you're looking for a
@@ -18,7 +23,10 @@
         </p>
       </div>
     </div>
-    <div class="form_container typping">
+    <div
+      *ngIf="isSendMessage | async; else congratulation"
+      class="form_container typping"
+    >
       <div class="wrapper_form d-flex flex-column">
         <form class="my-2" (submit)="onSubmit()" [formGroup]="formContact">
           <div class="container_input">
@@ -87,6 +95,16 @@
         </figure>
       </div>
     </div>
+    <ng-template #congratulation>
+      <div class="thx">
+        <picture>
+          <img
+            src="../../assets/../assets/images/thx.svg"
+            alt="heart with message inside thx"
+          />
+        </picture>
+      </div>
+    </ng-template>
   </div>
   <canvas #confettiCanvas id="canvas_confetti"></canvas>
 </section>
