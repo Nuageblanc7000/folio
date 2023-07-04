@@ -24,7 +24,7 @@ const messageController = {
           new ErrorResponse(
             "une erreur est survenue veuillez relancer un email",
             (path = "global"),
-            (err = {}),
+            (err = e),
             (code = 400)
           )
         );
