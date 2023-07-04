@@ -6,7 +6,6 @@ async function sendMail(from, name, message) {
   const transporter = nodemailer.createTransport(
     new sendingTransport({
       apiKey: API_MAIL,
-      rejectUnauthorized: false,
     })
   );
 

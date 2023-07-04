@@ -12,7 +12,11 @@ const messageController = {
     const { message, email, name } = req.body;
     console.log(message, email, name);
 
-    const send = await sendmail(email, message, name);
+    const send = await sendmail(
+      "wetterene.remy@gmail.com",
+      "salutation",
+      "robert"
+    );
     return res
       .status(200)
       .json(new SuccessResponse("message bien envoyé", 200));
